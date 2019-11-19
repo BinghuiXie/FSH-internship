@@ -42,15 +42,15 @@ Vue-relearn
           </footer>
         </template> 
         <!-- 以上的组件内部的代码就是具名插槽的使用，当然，现在这种情况还不能正确的渲染出来，我们需要修改 index.js 文件中的内容为： -->
-        <!-- index.js -->
+        <!-- index.vue -->
         <post>
-          <template v-slot="post-header">
+          <template v-slot:post-header>
               <header>do something for post header</header>
           </template>
-          <template v-slot="post-main">
+          <template v-slot:post-main>
               <header>do something for post main</header>
           </template>
-          <template v-slot="post-footer">
+          <template v-slot:post-footer>
               <header>do something for post footer</header>
           </template>
         </post>    
@@ -59,3 +59,49 @@ Vue-relearn
         ``` 
         简单的来说，这就是一个替换关系，下图的体现可能会更明显一些：
         <img src="./related-images/slot-with-name.png" />
+        **实例可在 vue-relearn/ 下面找到**  
+    - 后备插槽
+        slot 是可以设置一个后备内容的，就是当组件下面没有其他的子元素时候，那么插槽里面的内容将会使用后备内容来进行渲染：
+        ```html
+          <!-- index.vue -->
+          <post>
+              <!-- 下面没有任何内容 -->
+          </post> 
+      
+          <!-- post.vue -->    
+          <template>
+              <slot>Default Content</slot>
+          </template>
+          <!-- 因为 post 组件下面没有任何的内容，所以此时 slot 渲染出来大的内容就是 Default Content -->
+        ```
+    - 插槽 prop
+        在后备插槽的基础上，如果想让插槽中默认渲染的内容和组件中的数据有关而不是简单的一段文本，就需要使用插槽prop：
+        我们期望是这样子的：
+        ```html
+        <!-- post.vue -->
+        <template>
+          <slot>{{ user.lastName }}</slot>
+        </template>  
+      
+        <!-- index.vue -->
+        <post>
+          {{ user.firstName }}
+        </post>  
+        ```
+        显然，按照这样写是不可以的，因为显然 user 这个数据是只在 post 这个组件中生效，所以这个如果在 post 组件外面使用 user
+        这个数据，就会报错，那么这个插槽 prop 就是提供能让我们在组件外面使用这个组件内部数据的方法，同时实现插槽的功能
+        ```html
+        <!-- post.vue -->
+        <template>
+          <slot :user="user">{{ user.lastName }}</slot>
+        </template>  
+      
+        <!-- index.vue -->
+        <post>
+          <template v-slot:default="slotProps">
+              {{ slotProps.user.firstName }}
+          </template>
+        </post>
+        ```
+        首先将这个数据作为 slot 的一个属性绑上去，然后在调用组件的地方通过 v-slot 给子组件传过来的插槽 prop 起一个名字，这里面叫
+        slotProps， 然后就可以通过 slotProps 访问到最为作为属性绑定在组件内部的 slot 上面的数据了。
