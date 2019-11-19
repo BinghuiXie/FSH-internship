@@ -97,11 +97,13 @@ Vue-relearn
         </template>  
       
         <!-- index.vue -->
-        <post>
-          <template v-slot:default="slotProps">
-              {{ slotProps.user.firstName }}
-          </template>
-        </post>
+        
         ```
         首先将这个数据作为 slot 的一个属性绑上去，然后在调用组件的地方通过 v-slot 给子组件传过来的插槽 prop 起一个名字，这里面叫
         slotProps， 然后就可以通过 slotProps 访问到最为作为属性绑定在组件内部的 slot 上面的数据了。
+        上面这种写法，在只需要用到一个插槽的时候，会变得更加简洁：
+        ```html
+        <post v-slot="slotProps">
+          {{ slotProps.user.firstName }}
+        </post>
+        ```
