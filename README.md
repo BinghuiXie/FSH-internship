@@ -11,7 +11,45 @@ Vue-relearn
     - v-model
     
 2. vue 中的父子组件中的通信
-    - 父传子        
+    - 父传子
+         父组件通过属性向子组件传递数据，子组件通过 props 接受父组件传过来的数据，并在组件内部使用它，看一个例子：
+         ```html
+          <!-- 父组件-->
+          <template>
+              <div class="container">
+                  <PostHeader title="博客标题A" postTime="2019.11.20" author="不会拉小提琴的左脚"/>
+                  <PostContent :content="{{ content }}"/>
+                  <PostComment :length="{{ commentLength }}" :commentList="{{ commentList }}"/>
+              </div>
+          </template>
+         ```
+         父组件模拟的是一个博客系统的主页，子组件包括博客的头部 (PostHeader)，博客内容 (PostContent)，博客评论 (PostComment)，子组件的数据需要通过父组件传入的数据进行渲染。  
+         子组件通过 props 接受父组件传过来的数据：
+         ```vue
+          <!-- 子组件， 以 postHeader 为例 -->
+          <template>
+              <div class="post-header-container">
+                  <h1 class="title">{{ title }}</h1>
+                  <div class="other-info">
+                      <p class="author">{{ author }}</p>
+                      <p class="post-time">{{ postTime }}</p>
+                  </div>
+              </div>
+          </template>    
+      
+          <script>
+              export default {
+                  name: 'PostHeader',
+                  props: ['title', 'postTime', 'author']
+              }   
+          </script>
+          
+          
+          
+          
+              
+          
+         ```
     - 子传父
     
 3. 插槽 (slot) <===> 类似于 react 里面的 props.children
@@ -107,3 +145,5 @@ Vue-relearn
           {{ slotProps.user.firstName }}
         </post>
         ```
+      
+4. 状态管理 (vuex)

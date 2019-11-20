@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <PostHeader title="博客标题A" postTime="2019.11.20" author="不会拉小提琴的左脚" />
     <SlotTest>
       <template v-slot:slot-test-header>
         <p>I'm slot test header, technically, I'm useless ,only for the demo</p>
@@ -20,14 +20,14 @@
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import PostHeader from "./components/PostHeader";
 import SlotTest from "./components/SlotTest.vue"
 
 export default {
   name: 'app',
   components: {
-    HelloWorld,
-    SlotTest
+    SlotTest,
+    PostHeader
   }
 }
 </script>

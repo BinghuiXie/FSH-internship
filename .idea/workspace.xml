@@ -1,7 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f6bd7546-e228-4ed4-823b-a967aafa054f" name="Default Changelist" comment="" />
+    <list default="true" id="f6bd7546-e228-4ed4-823b-a967aafa054f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/vue-relearn/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue-relearn/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue-relearn/babel.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue-relearn/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue-relearn/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue-relearn/public/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue-relearn/public/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue-relearn/src/App.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue-relearn/src/assets/logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue-relearn/src/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,13 +29,13 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/vue-relearn" />
   </component>
   <component name="ProjectId" id="1TolYMt0icYXE8VR5TZ1p3s2rDe" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../hello-uniapp" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -52,7 +65,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1574134375375</updated>
-      <workItem from="1574134377183" duration="12090000" />
+      <workItem from="1574134377183" duration="12699000" />
+      <workItem from="1574212288332" duration="2131000" />
     </task>
     <servers />
   </component>
@@ -64,7 +78,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
